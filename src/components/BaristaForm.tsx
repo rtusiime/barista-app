@@ -1,6 +1,6 @@
-import React, { Component, useState } from "react";
+import {useState } from "react";
 import RecipeChoices from "./RecipeChoices";
-import drinksJson from "../data/drinks.json"
+import drinksJson from "../data/drinks.json";
 
 const BarristaForm = () => {
 
@@ -9,18 +9,41 @@ const BarristaForm = () => {
         'milk': '',
         'syrup': '',
         'blended': ''
-    })
+    });
 
     const ingredients = {
         'temperature': ['hot', 'lukewarm', 'cold'],
         'syrup': ['mocha', 'vanilla', 'toffee', 'maple', 'caramel', 'other', 'none'],
         'milk': ['cow', 'oat', 'goat', 'almond', 'none'],
         'blended': ['yes', 'turbo', 'no']
-    }
+    };
 
     const onCheckAnswer = () => {
-        console.log("boob")
-    }
+        if (trueRecipe.temp != inputs['temperature']) {
+            setTemp('wrong');
+        }
+        else {
+            setTemp('correct');
+        }
+        if (trueRecipe.syrup != inputs['syrup']) {
+            setSyrup('wrong');
+        }
+        else {
+            setSyrup('correct');
+        }
+        if (trueRecipe.blended != inputs['blended']) {
+            setBlended('wrong');
+        }
+        else {
+            setBlended('correct');
+        }
+        if (trueRecipe.milk != inputs['milk']) {
+            setMilk('wrong');
+        }
+        else {
+            setMilk('correct');
+        }
+    };
 
     const onNewDrink = () => {
         setInputs({
@@ -29,22 +52,32 @@ const BarristaForm = () => {
             'syrup': '',
             'blended': ''
         });
+        setTemp('');
+        setMilk('');
+        setSyrup('');
+        setBlended('');
         getNextDrink();
-    }
+    };
 
     const getNextDrink = () => {
         let randomDrinkIndex = Math.floor(Math.random() * drinksJson.drinks.length);
-        setCurrentDrink(drinksJson.drinks[randomDrinkIndex].name)
-        setTrueRecipe(drinksJson.drinks[randomDrinkIndex].ingredients)
-    }
+        setCurrentDrink(drinksJson.drinks[randomDrinkIndex].name);
+        setTrueRecipe(drinksJson.drinks[randomDrinkIndex].ingredients);
+    };
 
-    const [currentDrink, setCurrentDrink] = useState('')
+    const [currentDrink, setCurrentDrink] = useState('');
+
     const [trueRecipe, setTrueRecipe] = useState({
         "temp": '',
         "syrup": '',
         "milk": '',
         "blended": ''
-    })
+    });
+    
+    const [temp, setTemp] = useState('');
+    const [milk, setMilk] = useState('');
+    const [syrup, setSyrup] = useState('');
+    const [blended, setBlended] = useState('');
 
 
     return (
@@ -66,7 +99,7 @@ const BarristaForm = () => {
             </form>
 
             <h3>Temperature</h3>
-            <div className="answer-space">
+            <div className="answer-space" id={temp}>
                 {inputs["temperature"]}
             </div>
             <RecipeChoices
@@ -80,7 +113,7 @@ const BarristaForm = () => {
             />
 
             <h3>milk</h3>
-            <div className="answer-space">
+            <div className="answer-space" id={milk}>
                 {inputs["milk"]}
             </div>
             <RecipeChoices
@@ -94,7 +127,7 @@ const BarristaForm = () => {
             />
 
             <h3>syrup</h3>
-            <div className="answer-space">
+            <div className="answer-space" id={syrup}>
                 {inputs["syrup"]}
             </div>
             <RecipeChoices
@@ -108,7 +141,7 @@ const BarristaForm = () => {
             />
 
             <h3>blended</h3>
-            <div className="answer-space">
+            <div className="answer-space" id={blended}>
                 {inputs["blended"]}
             </div>
             <RecipeChoices
