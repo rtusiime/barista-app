@@ -1,4 +1,4 @@
-import {useState } from "react";
+import { useState } from "react";
 import RecipeChoices from "./RecipeChoices";
 import drinksJson from "../data/drinks.json";
 
@@ -73,7 +73,7 @@ const BarristaForm = () => {
         "milk": '',
         "blended": ''
     });
-    
+
     const [temp, setTemp] = useState('');
     const [milk, setMilk] = useState('');
     const [syrup, setSyrup] = useState('');
@@ -94,52 +94,57 @@ const BarristaForm = () => {
                 </button>
             </div>
 
-            <form action="">
+            <form className="container">
 
-            </form>
-
-            <h3>Temperature</h3>
-            <div className="answer-space" id={temp}>
-                {inputs["temperature"]}
+            <div className="mini-container">
+                <h3>Temperature</h3>
+                <div className="answer-space" id={temp}>
+                    {inputs["temperature"]}
+                </div>
+                <RecipeChoices
+                    handleChange={(e) => setInputs((prevState) => ({
+                        ...prevState,
+                        [e.target.name]: e.target.value,
+                    }))}
+                    label="temperature"
+                    choices={ingredients['temperature']}
+                    checked={inputs['temperature']}
+                />
             </div>
-            <RecipeChoices
-                handleChange={(e) => setInputs((prevState) => ({
-                    ...prevState,
-                    [e.target.name]: e.target.value,
-                }))}
-                label="temperature"
-                choices={ingredients['temperature']}
-                checked={inputs['temperature']}
-            />
 
-            <h3>milk</h3>
-            <div className="answer-space" id={milk}>
-                {inputs["milk"]}
+            <div className="mini-container">
+                <h3>milk</h3>
+                <div className="answer-space" id={milk}>
+                    {inputs["milk"]}
+                </div>
+                <RecipeChoices
+                    handleChange={(e) => setInputs((prevState) => ({
+                        ...prevState,
+                        [e.target.name]: e.target.value,
+                    }))}
+                    label="milk"
+                    choices={ingredients['milk']}
+                    checked={inputs['milk']}
+                />
             </div>
-            <RecipeChoices
-                handleChange={(e) => setInputs((prevState) => ({
-                    ...prevState,
-                    [e.target.name]: e.target.value,
-                }))}
-                label="milk"
-                choices={ingredients['milk']}
-                checked={inputs['milk']}
-            />
 
-            <h3>syrup</h3>
-            <div className="answer-space" id={syrup}>
-                {inputs["syrup"]}
+            <div className="mini-container">
+                <h3>syrup</h3>
+                <div className="answer-space" id={syrup}>
+                    {inputs["syrup"]}
+                </div>
+                <RecipeChoices
+                    handleChange={(e) => setInputs((prevState) => ({
+                        ...prevState,
+                        [e.target.name]: e.target.value,
+                    }))}
+                    label="syrup"
+                    choices={ingredients['syrup']}
+                    checked={inputs['syrup']}
+                />
             </div>
-            <RecipeChoices
-                handleChange={(e) => setInputs((prevState) => ({
-                    ...prevState,
-                    [e.target.name]: e.target.value,
-                }))}
-                label="syrup"
-                choices={ingredients['syrup']}
-                checked={inputs['syrup']}
-            />
 
+            <div className="mini-container">
             <h3>blended</h3>
             <div className="answer-space" id={blended}>
                 {inputs["blended"]}
@@ -153,6 +158,9 @@ const BarristaForm = () => {
                 choices={ingredients['blended']}
                 checked={inputs['blended']}
             />
+            </div>
+
+            </form>
 
             <button
                 type="submit"
