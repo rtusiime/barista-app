@@ -1,30 +1,62 @@
-# React + TypeScript + Vite
+# Barista Quiz App!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Created by: **Kevin Tusiime**
 
-Currently, two official plugins are available:
+Embrace the life of a barista with this interactive web app. "Barista Quiz App" is an innovative tool designed to help users learn and memorize coffee drink recipes from Starbucks. Whether you're an aspiring barista, a coffee lover looking to deepen your knowledge, or just in for a fun learning experience, this app will test your knowledge on the various elements that make up Starbucks drinks, such as temperature, flavor, milk type, and blendedness.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Time spent: **8 hours spent in total**
 
-## Expanding the ESLint configuration
+## Gameplay
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Upon starting the app, users will be presented with a quiz related to a specific Starbucks drink. The game's goal is simple but engaging: to familiarize oneself with the various recipes and components that make up Starbucks drinks.
 
-- Configure the top-level `parserOptions` property like this:
+- **Quiz Form**: Users will select or input their answers for each drink's temperature, flavor, milk type, and blendedness.
+- **Feedback**: After submission, the app provides immediate feedback, indicating whether the answers are correct or incorrect.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+This self-paced, interactive learning experience ensures users can test their knowledge and improve over time.
+
+## Required Features
+
+The following **required** features are completed:
+
+- [x] The app presents one drink at a time to the user.
+- [x] Users can select one option for each of the four categories: temperature, flavor, milk type, and blendedness.
+- [x] After making selections, users submit their answers to receive feedback.
+- [x] Correct and incorrect answers are clearly indicated through color-coded feedback.
+- [x] Users can proceed to a new drink challenge by clicking the "New Drink" button.
+
+## Optional Features
+
+The following **optional** features are implemented:
+
+- [x] Users can manually type in their answers instead of selecting them, with proper validation to ensure the answers match the given options.
+- [x] Historical data tracking users' progress and common mistakes for further review and learning.
+
+## Video Walkthrough
+
+Here's a walkthrough of the implemented features:
+
+![Video Walkthrough](barista-quiz-walkthrough.gif)
+
+## Notes
+
+- Implementing dynamic form inputs and managing state were challenging but rewarding aspects of this project.
+- Integrating the drink recipes and ensuring accurate feedback mechanisms provided a great learning experience.
+
+## License
+
 ```
+Copyright [2024] [Kevin Tusiime]
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
