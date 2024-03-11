@@ -36,7 +36,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of the implemented features:
 
-![Video Walkthrough](barista-quiz-walkthrough.gif)
+![Video Walkthrough](barrista-walkthrough.gif)
 
 ## Notes
 
