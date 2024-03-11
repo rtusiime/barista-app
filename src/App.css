@@ -1,87 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: black;
-
-}
-
-.card {
-  width: 400px;
-  height: 300px;
-  position: relative;
-  padding: 10px;
-  border-radius: 20px;
-  perspective: 1000px;
-  margin: 20px auto; /* Centering the card */
-  cursor: pointer;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* More pronounced shadow for depth */
-  background-color: #ffffff; /* Light mode adjustment, consider using a variable for theme support */
-  overflow: hidden; /* Ensures no content bleeds outside the card */
-}
-
-.card-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-face.isFlipped {
-  backface-visibility: visible;
-}
-.card-face.front {
-  max-width: 400px;
-  max-height: 300px;
-}
-
-.card-face.back {
-  transform: rotateX(180deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-face.back.isFlipped::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 90%; height: 100%;
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.2)); /* Adjust color/opacity as needed */
-  pointer-events: none; /* Allows clicks to pass through */
-  margin-left: 10px;
-}
-
-.card.isFlipped {
-  transform: rotateX(180deg);
-}
-
-.card-face.isFlipped.front {
-  visibility: collapse;
-}
-
-
-.card img {
-  max-width:100%;
-  height: auto;
-  max-height: 100%;
-  border-radius: 8px;
-  object-fit: contain;
-}
-
-.card h3 {
-  margin-top: 0; /* Remove the specific margin-top and position properties */
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: block;
 }
 
 a {
@@ -92,27 +17,6 @@ a {
 
 a:hover {
   color: #535bf2;
-}
-
-h1 {
-  font-family: oswald;
-  background-color: rgba(255, 255, 255, 0.9); 
-  font-size: 100px;
-  font-weight: 500;
-  text-transform: uppercase;
-  line-height: 1;
-  box-shadow: white;
-  margin: 0 auto;
-  border-radius: 20px;
-  margin: 0;
-}
-
-h2 {
-  background-color: rgba(255, 255, 255, 0.9); 
-  width: 50%;
-  margin: 0 auto;
-  padding: 10px;
-  font-family: cursive;
 }
 
 .container {
@@ -127,7 +31,12 @@ position: relative;
 display: flex;
 justify-content: space-evenly;
 flex-direction: column;
-margin: 50px;
+margin: 20px;
+padding: 20px;
+background-color: rgb(226, 195, 147);
+text-align: center;
+border-radius: 10px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #wrong {
@@ -138,14 +47,28 @@ margin: 50px;
   background-color: #ccffcc; /* Light green for correct answers */
 }
 
+.mini-header {
+  height: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(226, 195, 147);
+  text-align: center;
+  border-radius: 10px;
+  width: 93%;
+  margin-top: 10px;
+
+}
+
 .answer-space {
-  background-color: pink; /* Light grey to distinguish the area */
-  width: 100%; /* Or a fixed width, depending on your design */
-  height: 50px; /* Or a fixed height, as needed */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0; /* Optional, for spacing */
+  background-color: (226, 195, 147);
+  width: auto; /* Or a fixed width, depending on your design */
+  height: 20px; /* Or a fixed height, as needed */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: auto;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  clear: both;
 }
 
 .radio-buttons li {
@@ -153,22 +76,75 @@ margin: 50px;
 }
 
 
-/* .buttons {
-  margin-top: 10px;
+li {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  background-color: #FFFDD0;
+  border-radius: 15px;
+  display: flex;
+  width: 100%;
+  padding: 2px;
 }
+
+button.newdrink {
+  margin: 10px;
+  width: auto;
+  text-align: center;
+}
+
+button.submit {
+  margin: auto;
+}
+
+.drink-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: rgba(138, 98, 12, 0.942);
+  font-weight: bold;
+  color: white;
   cursor: pointer;
   transition: border-color 0.25s;
   margin-right: 10px;
 }
+
+.title {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.title-container {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 5em;
+}
+
+h1 {
+  font-size: 3.2em;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 auto;
+}
+
+h2 {
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+/* 
 
 button:hover {
   border-color: #646cff;

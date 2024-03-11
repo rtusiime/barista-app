@@ -13,8 +13,8 @@ const BarristaForm = () => {
 
     const ingredients = {
         'temperature': ['hot', 'lukewarm', 'cold'],
-        'syrup': ['mocha', 'vanilla', 'toffee', 'maple', 'caramel', 'other', 'none'],
-        'milk': ['cow', 'oat', 'goat', 'almond', 'none'],
+        'syrup': ['mocha', 'vanilla', 'toffee', 'maple', 'caramel', 'other', 'no syrup'],
+        'milk': ['cow', 'oat', 'goat', 'almond', 'no milk'],
         'blended': ['yes', 'turbo', 'no']
     };
 
@@ -167,13 +167,6 @@ const BarristaForm = () => {
                 className="button submit"
                 onClick={onCheckAnswer}>
                 Check Answer
-            </button>
-            <button
-                type="new-drink-button"
-                className="button submit"
-                onClick={onNewDrink}
-            >
-                New Drink
             </button>
         </div>
     );
