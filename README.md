@@ -36,7 +36,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of the implemented features:
 
-![Video Walkthrough](barrista-walkthrough.gif)
+![Video Walkthrough](src/assets/barrista-walkthrough.gif)
 
 ## Notes
 
